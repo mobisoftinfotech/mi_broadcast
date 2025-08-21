@@ -63,12 +63,13 @@ void main() {
 
       test('should remove specific receiver', () {
         final receivedValues = <String>[];
-        final receiver1 = (dynamic value, void Function(dynamic result)? callback) {
+        void receiver1(dynamic value, void Function(dynamic result)? callback) {
           receivedValues.add('${value}_1');
-        };
-        final receiver2 = (dynamic value, void Function(dynamic result)? callback) {
+        }
+
+        void receiver2(dynamic value, void Function(dynamic result)? callback) {
           receivedValues.add('${value}_2');
-        };
+        }
 
         broadcast.register('test_key', receiver1);
         broadcast.register('test_key', receiver2);
@@ -111,7 +112,8 @@ void main() {
           callback?.call('processed_$value');
         });
 
-        broadcast.broadcast('test_key', 
+        broadcast.broadcast(
+          'test_key',
           value: 'test_value',
           callback: (result) {
             callbackResult = result as String;
@@ -132,14 +134,16 @@ void main() {
           callback?.call('result2_$value');
         });
 
-        broadcast.broadcast('test_key', 
+        broadcast.broadcast(
+          'test_key',
           value: 'test_value',
           callback: (result) {
             callbackResults.add(result as String);
           },
         );
 
-        expect(callbackResults, equals(['result1_test_value', 'result2_test_value']));
+        expect(callbackResults,
+            equals(['result1_test_value', 'result2_test_value']));
       });
     });
 
@@ -171,7 +175,8 @@ void main() {
           callback?.call('sticky_processed_$value');
         });
 
-        broadcast.stickyBroadcast('test_key', 
+        broadcast.stickyBroadcast(
+          'test_key',
           value: 'sticky_value',
           callback: (result) {
             callbackResult = result as String;
@@ -184,14 +189,16 @@ void main() {
 
     group('Persistent Messages', () {
       test('should store persistent messages', () {
-        broadcast.broadcast('test_key', value: 'persistent_value', persistence: true);
-        
+        broadcast.broadcast('test_key',
+            value: 'persistent_value', persistence: true);
+
         final value = MIBroadcast.value<String>('test_key');
         expect(value, equals('persistent_value'));
       });
 
       test('should deliver persistent message to new receivers', () {
-        broadcast.broadcast('test_key', value: 'persistent_value', persistence: true);
+        broadcast.broadcast('test_key',
+            value: 'persistent_value', persistence: true);
 
         String? receivedValue;
         broadcast.register('test_key', (value, callback) {
@@ -203,7 +210,8 @@ void main() {
 
       test('should prioritize persistent over sticky messages', () {
         broadcast.stickyBroadcast('test_key', value: 'sticky_value');
-        broadcast.broadcast('test_key', value: 'persistent_value', persistence: true);
+        broadcast.broadcast('test_key',
+            value: 'persistent_value', persistence: true);
 
         final value = MIBroadcast.value<String>('test_key');
         expect(value, equals('persistent_value'));
@@ -212,7 +220,8 @@ void main() {
 
     group('Static value method', () {
       test('should return persistent value', () {
-        broadcast.broadcast('test_key', value: 'persistent_value', persistence: true);
+        broadcast.broadcast('test_key',
+            value: 'persistent_value', persistence: true);
         final value = MIBroadcast.value<String>('test_key');
         expect(value, equals('persistent_value'));
       });
@@ -239,7 +248,8 @@ void main() {
       test('should clear specific key', () {
         broadcast.register('test_key', (value, callback) {});
         broadcast.stickyBroadcast('test_key', value: 'sticky_value');
-        broadcast.broadcast('test_key', value: 'persistent_value', persistence: true);
+        broadcast.broadcast('test_key',
+            value: 'persistent_value', persistence: true);
 
         broadcast.clear('test_key');
 
@@ -340,7 +350,8 @@ void main() {
 
         broadcast.broadcast('test_key', value: 'test_value');
         expect(receivedValues.length, equals(5));
-        expect(receivedValues.every((v) => v.startsWith('test_value_')), isTrue);
+        expect(
+            receivedValues.every((v) => v.startsWith('test_value_')), isTrue);
       });
     });
   });

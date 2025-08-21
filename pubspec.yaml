@@ -1,11 +1,12 @@
 name: mi_broadcast
-description: "A new Flutter package project."
+description: "A lightweight and efficient broadcast messaging system for Flutter applications with support for sticky broadcasts, persistent messages, and context-based registration."
 version: 0.0.1
-homepage:
+homepage: https://github.com/mobisoftinfotech/mi_broadcast
+repository: https://github.com/mobisoftinfotech/mi_broadcast
 
 environment:
-  sdk: ^3.8.1
-  flutter: ">=1.17.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
