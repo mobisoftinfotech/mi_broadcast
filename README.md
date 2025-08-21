@@ -2,7 +2,9 @@
 
 A lightweight and efficient broadcast messaging system for Flutter applications. This package provides a simple way to communicate between different parts of your Flutter app using a publish-subscribe pattern.
 
-**Author:** Prashant Telangi (<prashant.telangi@mobisoftinfotech.com>)
+**Author:** Prashant Telangi ([LinkedIn](https://www.linkedin.com/in/prashant-telangi-83816918/))
+
+**[Mobisoft Infotech - App Development Company, Houston](http://mobisoftinfotech.com/)** 
 
 ![mi_broadcast](assets/logo.png)
 
