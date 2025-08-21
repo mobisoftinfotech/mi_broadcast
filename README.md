@@ -12,7 +12,7 @@ A lightweight and efficient broadcast messaging system for Flutter applications.
 - 🚀 **Simple API**: Easy-to-use broadcast messaging system
 - 🔄 **Multiple Receivers**: Support for multiple receivers per event
 - 📌 **Sticky Broadcasts**: Messages that are delivered to future receivers
-- 💾 **Persistent Messages**: Messages that persist across app sessions
+- 💾 **Persistent Messages**: Store and retrieve messages that persist during the app session and can be accessed throughout the entire application lifecycle
 - 🎯 **Context-based Registration**: Automatic cleanup with context-based registration
 - ⚡ **Lightweight**: Minimal overhead with efficient memory management
 - 🔒 **Type Safe**: Support for type-safe value retrieval
@@ -65,7 +65,7 @@ MIBroadcast().register('app_config', (value, callback) {
 
 ### Persistent Messages
 
-Persistent messages are stored and can be retrieved later:
+Persistent messages are stored during the app session and can be retrieved throughout the application lifecycle:
 
 ```dart
 // Send a persistent message
