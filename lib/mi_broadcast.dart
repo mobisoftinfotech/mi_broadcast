@@ -1,23 +1,23 @@
 /// A function type for broadcast receivers that handle messages.
-/// 
+///
 /// [value] is the message data being broadcast.
 /// [callback] is an optional callback function to send a response back to the broadcaster.
 typedef MIBroadcastReceiver = void Function(
     dynamic value, void Function(dynamic result)? callback);
 
 /// A singleton broadcast messaging system for Flutter applications.
-/// 
+///
 /// This class provides a simple way to communicate between different parts of your Flutter app
 /// using a publish-subscribe pattern. It supports sticky broadcasts, persistent messages,
 /// and context-based registration for automatic cleanup.
 class MIBroadcast {
   static final MIBroadcast _instance = MIBroadcast._internal();
-  
+
   /// Creates a new instance of MIBroadcast.
-  /// 
+  ///
   /// Returns the singleton instance of MIBroadcast.
   factory MIBroadcast() => _instance;
-  
+
   /// Private constructor for singleton pattern.
   MIBroadcast._internal();
 
