@@ -1,6 +1,6 @@
 name: mi_broadcast
 description: "A lightweight and efficient broadcast messaging system for Flutter applications with support for sticky broadcasts, persistent messages, and context-based registration."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/mobisoftinfotech/mi_broadcast
 repository: https://github.com/mobisoftinfotech/mi_broadcast
 

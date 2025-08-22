@@ -1,3 +1,10 @@
+## 0.0.2
+
+* Documentation updates
+* Updated author information with LinkedIn link
+* Added company information
+* Corrected persistent messages description
+
 ## 0.0.1
 
 * Initial release of mi_broadcast package
