@@ -4,7 +4,7 @@ A lightweight and efficient broadcast messaging system for Flutter applications.
 
 **Author:** Prashant Telangi ([LinkedIn](https://www.linkedin.com/in/prashant-telangi-83816918/))
 
-**[Mobisoft Infotech - App Development Company, Houston](http://mobisoftinfotech.com/)** 
+**[Mobisoft Infotech - App Development Company, Houston](https://mobisoftinfotech.com/)** 
 
 ![mi_broadcast](assets/logo.png)
 
