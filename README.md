@@ -27,7 +27,7 @@ Add `mi_broadcast` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mi_broadcast: ^0.0.1
+  mi_broadcast: ^0.0.2
 ```
 
 ### Import
